@@ -1,0 +1,267 @@
+{
+  "india:ahmedabad:": {
+    "country": "India",
+    "state": "Gujarat",
+    "city": "Ahmedabad",
+    "area": "",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "380001",
+      "380005",
+      "380006",
+      "380007",
+      "380008",
+      "380009",
+      "380013",
+      "380014",
+      "380015",
+      "380051",
+      "380052",
+      "380054",
+      "380058",
+      "380059",
+      "380060",
+      "382330",
+      "382350",
+      "382424",
+      "382481"
+    ],
+    "source": "LOCAL_DATASET",
+    "confidence": 0.95
+  },
+  "india:rajkot:": {
+    "country": "India",
+    "state": "Gujarat",
+    "city": "Rajkot",
+    "area": "",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "360001",
+      "360002",
+      "360003",
+      "360004",
+      "360005",
+      "360006",
+      "360007",
+      "360021",
+      "360022",
+      "360024"
+    ],
+    "source": "LOCAL_DATASET",
+    "confidence": 0.95
+  },
+  "india:junagadh:": {
+    "country": "India",
+    "state": "Gujarat",
+    "city": "Junagadh",
+    "area": "",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "362001",
+      "362002",
+      "362004",
+      "362015",
+      "362020"
+    ],
+    "source": "LOCAL_DATASET",
+    "confidence": 0.95
+  },
+  "india:amreli:": {
+    "country": "India",
+    "state": "Gujarat",
+    "city": "Amreli",
+    "area": "",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "365601",
+      "365602"
+    ],
+    "source": "LOCAL_DATASET",
+    "confidence": 0.95
+  },
+  "india:jamnagar:": {
+    "country": "India",
+    "state": "Gujarat",
+    "city": "Jamnagar",
+    "area": "",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "361001",
+      "361004",
+      "361005",
+      "361006",
+      "361007",
+      "361008",
+      "361009"
+    ],
+    "source": "LOCAL_DATASET",
+    "confidence": 0.95
+  },
+  "uk:london:": {
+    "country": "UK",
+    "state": "Greater London",
+    "city": "London",
+    "area": "",
+    "postal_label": "Postcode",
+    "postcodes": [
+      "E1",
+      "E2",
+      "EC1A",
+      "EC2A",
+      "EC3A",
+      "EC4A",
+      "N1",
+      "NW1",
+      "NW5",
+      "SE1",
+      "SE10",
+      "SW1A",
+      "SW3",
+      "SW7",
+      "W1D",
+      "W1F",
+      "W8",
+      "WC2H"
+    ],
+    "source": "LOCAL_DATASET",
+    "confidence": 0.95
+  },
+  "india:keshod:": {
+    "country": "India",
+    "state": "",
+    "city": "Keshod",
+    "area": "",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "361306",
+      "362220",
+      "362229",
+      "825324"
+    ],
+    "source": "POSTCODE_SERVICE",
+    "confidence": 0.9
+  },
+  "india:ahmedabad:satellite": {
+    "country": "India",
+    "state": "Gujarat",
+    "city": "Ahmedabad",
+    "area": "Satellite",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "380015"
+    ],
+    "source": "AREA_MAPPING",
+    "confidence": 0.98
+  },
+  "india:amrel:": {
+    "country": "India",
+    "state": "",
+    "city": "Amrel",
+    "area": "",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "365421",
+      "365430",
+      "365540",
+      "365601"
+    ],
+    "source": "POSTCODE_SERVICE",
+    "confidence": 0.9
+  },
+  "india:vadodara:vasna road": {
+    "country": "India",
+    "state": "Gujarat",
+    "city": "Vadodara",
+    "area": "Vasna Road",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "390015"
+    ],
+    "source": "AREA_MAPPING",
+    "confidence": 0.98
+  },
+  "india:gandhinagar:": {
+    "country": "India",
+    "state": "Gujarat",
+    "city": "Gandhinagar",
+    "area": "",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "382010",
+      "382016",
+      "382021",
+      "382024",
+      "382028",
+      "382355",
+      "382421",
+      "382426"
+    ],
+    "source": "LOCAL_DATASET",
+    "confidence": 0.95
+  },
+  "india:tita:": {
+    "country": "India",
+    "state": "",
+    "city": "Tita",
+    "area": "",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "124514",
+      "206125",
+      "231211",
+      "247774",
+      "247776",
+      "251301",
+      "262543",
+      "301411",
+      "303325",
+      "304507",
+      "313001",
+      "326023",
+      "333012",
+      "414102",
+      "416208",
+      "424305",
+      "444702",
+      "457001",
+      "695021",
+      "700119",
+      "742132",
+      "742224",
+      "743337",
+      "743412",
+      "783370",
+      "785630",
+      "785632",
+      "844502"
+    ],
+    "source": "POSTCODE_SERVICE",
+    "confidence": 0.9
+  },
+  "india:titan:": {
+    "country": "India",
+    "state": "",
+    "city": "Titan",
+    "area": "",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "333012",
+      "424305",
+      "695021"
+    ],
+    "source": "POSTCODE_SERVICE",
+    "confidence": 0.9
+  },
+  "india:titaniu:": {
+    "country": "India",
+    "state": "",
+    "city": "Titaniu",
+    "area": "",
+    "postal_label": "Pincode",
+    "postcodes": [
+      "695021"
+    ],
+    "source": "POSTCODE_SERVICE",
+    "confidence": 0.9
+  }
+}

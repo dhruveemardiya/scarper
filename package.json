@@ -1,0 +1,31 @@
+{
+  "name": "scraper-desktop",
+  "version": "1.0.0",
+  "description": "Local Business Data Scraper with Electron, React, and Python",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently -k \"npm run dev:frontend\" \"python -u python/run_scraper.py\" \"wait-on tcp:5173 && electron .\"",
+    "dev:browser": "concurrently -k \"npm run dev:frontend\" \"python -u python/run_scraper.py\"",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:server": "python -u python/run_scraper.py",
+    "dev:electron": "electron .",
+    "build:frontend": "npm run build --prefix frontend",
+    "start": "electron ."
+  },
+  "keywords": [
+    "scraper",
+    "selenium",
+    "beautifulsoup",
+    "electron",
+    "react",
+    "business-data"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^35.0.0",
+    "wait-on": "^8.0.2"
+  }
+}

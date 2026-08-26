@@ -1,0 +1,8 @@
+{
+  "username": "Admin",
+  "password_hash": "31c74852baf559a45ac8ba2aadde72c5bdf55c1f48a8760e22095239f196714e",
+  "salt": "14a0a50cc9d452c638ff5ce78f1ce7b2",
+  "pin": "123456",
+  "session_timeout": 7200,
+  "updated_at": 1787725892.119815
+}
