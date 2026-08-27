@@ -36,7 +36,7 @@ from scraper.generic_scraper import GenericScraper
 from services.auth_service import auth_service
 
 HOST = os.environ.get("SCRAPER_HOST", "0.0.0.0")
-PORT = int(os.environ.get("SCRAPER_PORT", 8765))
+PORT = int(os.environ.get("PORT", os.environ.get("SCRAPER_PORT", 8765)))
 
 class ScraperStateManager:
     """Central Authoritative Scraper State."""
