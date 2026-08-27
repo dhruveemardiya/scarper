@@ -214,8 +214,47 @@ export default function DataTable({
     document.body.removeChild(link);
   };
 
+  const [copiedPath, setCopiedPath] = useState('');
+
+  const handleCopyPath = (path) => {
+    if (!path) return;
+    const fallbackCopy = (text) => {
+      try {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        const success = document.execCommand('copy');
+        document.body.removeChild(textArea);
+        if (success) {
+          setCopiedPath(text);
+          setTimeout(() => setCopiedPath(''), 2000);
+        }
+      } catch (err) {
+        console.error('[DataTable] Fallback copy failed:', err);
+      }
+    };
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(path).then(() => {
+          setCopiedPath(path);
+          setTimeout(() => setCopiedPath(''), 2000);
+        }).catch(() => fallbackCopy(path));
+      } else {
+        fallbackCopy(path);
+      }
+    } catch (_) {
+      fallbackCopy(path);
+    }
+  };
+
   return (
-    <div className="dataset-table-card app-card">
+    <div className="data-table-container app-card">
       {/* 1. Multi-View Tab Navigation Bar */}
       <div className="dataset-tab-nav-bar">
         <button
@@ -777,12 +816,12 @@ export default function DataTable({
             <table className="dataset-table">
               <thead>
                 <tr>
-                  <th className="th-index">#</th>
-                  <th>CSV File Name</th>
-                  <th>Records Saved</th>
-                  <th>File Size</th>
-                  <th>Last Modified</th>
-                  <th>Full Disk Location</th>
+                  <th className="th-index" style={{ width: '45px' }}>#</th>
+                  <th style={{ minWidth: '260px' }}>CSV File Name</th>
+                  <th style={{ minWidth: '130px' }}>Records Saved</th>
+                  <th style={{ minWidth: '95px' }}>File Size</th>
+                  <th style={{ minWidth: '160px' }}>Last Modified</th>
+                  <th style={{ minWidth: '320px' }}>Full Disk Location</th>
                   <th className="th-actions" style={{ minWidth: '180px' }}>Actions</th>
                 </tr>
               </thead>
@@ -799,28 +838,40 @@ export default function DataTable({
                   filteredHistoryFiles.map((file, index) => (
                     <tr key={file.filepath || index} className="dataset-row">
                       <td className="td-index">{index + 1}</td>
-                      <td className="td-cell-text">
+                      <td className="td-history-filename">
                         <div className="history-filename-cell">
-                          <FileSpreadsheet size={15} className="history-file-icon" />
-                          <strong style={{ color: 'var(--text-primary)' }}>{file.filename}</strong>
+                          <FileSpreadsheet size={16} className="history-file-icon" />
+                          <strong className="history-filename-text">{file.filename}</strong>
                         </div>
                       </td>
-                      <td>
+                      <td className="td-history-badge">
                         <span className="badge-history-records">
                           {file.record_count} records
                         </span>
                       </td>
-                      <td className="td-cell-text" style={{ fontSize: '12.5px', color: 'var(--text-muted)' }}>
+                      <td className="td-history-meta">
                         {file.size_formatted || `${file.size_bytes} B`}
                       </td>
-                      <td className="td-cell-text" style={{ fontSize: '12.5px', color: 'var(--text-muted)' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-                          <Clock size={12} />
+                      <td className="td-history-meta">
+                        <div className="history-time-wrap">
+                          <Clock size={13} />
                           <span>{file.modified_at || '—'}</span>
                         </div>
                       </td>
-                      <td className="td-cell-text" style={{ fontSize: '11.5px', fontFamily: 'monospace', maxWidth: '240px' }} title={file.filepath}>
-                        {file.filepath}
+                      <td className="td-history-filepath">
+                        <div className="history-path-cell">
+                          <span className="history-path-text" title={file.filepath}>
+                            {file.filepath}
+                          </span>
+                          <button
+                            type="button"
+                            className="btn-copy-path"
+                            onClick={() => handleCopyPath(file.filepath)}
+                            title="Copy full file path to clipboard"
+                          >
+                            {copiedPath === file.filepath ? <CheckCircle2 size={13} className="text-success" /> : <Copy size={13} />}
+                          </button>
+                        </div>
                       </td>
                       <td className="td-actions">
                         <div className="history-actions-wrap">

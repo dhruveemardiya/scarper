@@ -718,6 +718,20 @@ export default function App() {
           setStatusMessage(`Completed! All records immediately saved to CSV.`);
           addToast(`Scraping finished. All records saved to CSV file.`, 'success');
           refreshHistoryFiles();
+          const targetCsv = data.output_csv || outputCsvPath;
+          if (targetCsv) {
+            ScraperBridge.loadCsv(targetCsv).then((res) => {
+              if (res && res.success && res.records && res.records.length > 0) {
+                setRecords(res.records.map(normalizeRecord));
+                setStats((prev) => ({
+                  ...prev,
+                  collected: res.records.length,
+                  found: res.records.length,
+                  progress_pct: 100
+                }));
+              }
+            }).catch(() => {});
+          }
         } else if (data.status === 'stopped') {
           setIsScraping(false);
           setStatusMessage('Scraping stopped by user.');

@@ -429,7 +429,7 @@ export default function Login({
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  placeholder="Enter username (e.g. Admin)"
+                  placeholder="Enter username"
                   className="auth-input auth-input-with-icon"
                   autoComplete="username"
                   autoFocus

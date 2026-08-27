@@ -123,10 +123,21 @@ def run_scraping_worker(
         }, req_id)
         return
 
-    first_item = queue[0]
+    first_item = queue[0] if queue else {}
     entity_type = (first_item.get("entity_type") or "business").lower()
 
+    # Synchronize state_manager and notify all WebSocket clients of new job
+    try:
+        state_manager.reset_for_new_job(queue, output_csv_path or "export.csv", custom_fields or [], existing_records or [])
+        broadcast_event("status", {"status": "started", "queue_length": len(queue), "output_csv_path": output_csv_path})
+    except Exception:
+        pass
+
     def event_cb(event_name: str, data: Dict[str, Any]):
+        try:
+            broadcast_event(event_name, data)
+        except Exception:
+            pass
         send_response("scraper_event", {
             "event": event_name,
             "data": data

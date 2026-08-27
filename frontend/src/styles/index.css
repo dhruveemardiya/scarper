@@ -1855,10 +1855,16 @@ div::-webkit-scrollbar-thumb:hover {
 }
 
 /* History Files Table Elements */
+.td-history-filename {
+  padding: 12px 16px;
+  min-width: 260px;
+  white-space: normal;
+}
+
 .history-filename-cell {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .history-file-icon {
@@ -1866,15 +1872,88 @@ div::-webkit-scrollbar-thumb:hover {
   flex-shrink: 0;
 }
 
+.history-filename-text {
+  color: var(--text-primary);
+  font-size: 13.5px;
+  font-weight: 700;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.td-history-badge {
+  padding: 12px 14px;
+  white-space: nowrap;
+}
+
 .badge-history-records {
   display: inline-block;
-  padding: 3px 10px;
+  padding: 4px 11px;
   border-radius: var(--radius-full);
   background: var(--success-bg);
   border: 1px solid var(--success-border);
   color: var(--success);
   font-size: 12px;
   font-weight: 700;
+  white-space: nowrap;
+}
+
+.td-history-meta {
+  padding: 12px 14px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.history-time-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.td-history-filepath {
+  padding: 12px 16px;
+  min-width: 320px;
+}
+
+.history-path-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-color);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  max-width: 100%;
+}
+
+.history-path-text {
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  word-break: break-all;
+  white-space: normal;
+  flex: 1;
+  user-select: all;
+  line-height: 1.4;
+}
+
+.btn-copy-path {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.btn-copy-path:hover {
+  color: var(--accent);
+  background: var(--accent-subtle);
 }
 
 .history-actions-wrap {
